@@ -1,0 +1,271 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://game.gd" type="Script" id=1]
+[ext_resource path="res://scenes/ONE.png" type="Texture" id=2]
+[ext_resource path="res://reset.gd" type="Script" id=3]
+[ext_resource path="res://scenes/two.png" type="Texture" id=4]
+[ext_resource path="res://homebutton1.gd" type="Script" id=5]
+[ext_resource path="res://scenes/three.png" type="Texture" id=6]
+[ext_resource path="res://homebutton2.gd" type="Script" id=7]
+[ext_resource path="res://homebutton3.gd" type="Script" id=8]
+[ext_resource path="res://danger1.gd" type="Script" id=9]
+[ext_resource path="res://scenes/four.png" type="Texture" id=10]
+[ext_resource path="res://homebutton4.gd" type="Script" id=11]
+[ext_resource path="res://scenes/five.png" type="Texture" id=12]
+[ext_resource path="res://homebutton5.gd" type="Script" id=13]
+[ext_resource path="res://scenes/404.png" type="Texture" id=14]
+[ext_resource path="res://scenes/home.png" type="Texture" id=15]
+[ext_resource path="res://homebutton6.gd" type="Script" id=16]
+[ext_resource path="res://scenes/danger.png" type="Texture" id=17]
+[ext_resource path="res://danger2.gd" type="Script" id=18]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 49, 14 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 128, 25 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 17, 337 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 17.5, 18.25 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="reset" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reset"]
+position = Vector2( -572, -295 )
+shape = SubResource( 2 )
+
+[node name="one" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="one"]
+texture = ExtResource( 2 )
+
+[node name="homebutton" type="Area2D" parent="one"]
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="one/homebutton"]
+position = Vector2( 1, 153 )
+shape = SubResource( 1 )
+
+[node name="two" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="two"]
+texture = ExtResource( 4 )
+
+[node name="homebutton" type="Area2D" parent="two"]
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="two/homebutton"]
+position = Vector2( 438, 255 )
+shape = SubResource( 1 )
+
+[node name="three" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="three"]
+texture = ExtResource( 6 )
+
+[node name="homebutton" type="Area2D" parent="three"]
+script = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="three/homebutton"]
+position = Vector2( 456, -197 )
+shape = SubResource( 1 )
+
+[node name="four" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="four"]
+texture = ExtResource( 10 )
+
+[node name="homebutton" type="Area2D" parent="four"]
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="four/homebutton"]
+position = Vector2( -447, -23 )
+shape = SubResource( 1 )
+
+[node name="danger" type="Area2D" parent="four"]
+script = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="four/danger"]
+position = Vector2( 187, -26 )
+shape = SubResource( 3 )
+
+[node name="five" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="five"]
+texture = ExtResource( 12 )
+
+[node name="homebutton" type="Area2D" parent="five"]
+script = ExtResource( 13 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="five/homebutton"]
+position = Vector2( 496, 292 )
+shape = SubResource( 1 )
+
+[node name="danger" type="Area2D" parent="five"]
+script = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="five/danger"]
+position = Vector2( 362, -171 )
+polygon = PoolVector2Array( -612, -191, -613, 93, -469, 92, -469, -17, -324, -18, -324, -53, -503, -52, -505, 55, -578, 56, -577, -205 )
+
+[node name="danger2" type="Area2D" parent="five"]
+script = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="five/danger2"]
+position = Vector2( 362, -171 )
+polygon = PoolVector2Array( -614, 534, -614, 147, -395, 150, -397, 42, -361, 43, -361, 150, -254, 152, -251, 189, -399, 187, -396, 401, -361, 402, -362, 258, -324, 260, -324, 401, -290, 403, -288, 295, -254, 295, -251, 438, -431, 437, -433, 186, -576, 188, -576, 555 )
+
+[node name="danger3" type="Area2D" parent="five"]
+script = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="five/danger3"]
+position = Vector2( 362, -171 )
+polygon = PoolVector2Array( -519, 531, -519, 229, -481, 228, -482, 577 )
+
+[node name="danger4" type="Area2D" parent="five"]
+script = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="five/danger4"]
+position = Vector2( 362, -171 )
+polygon = PoolVector2Array( -193, -43, -194, 627, -156, 529, -159, 238, 250, 238, 249, 204, -157, 203, -158, 98, 185, 101, 184, 67, -157, 64, -157, -8, -14, -5, -14, -42 )
+
+[node name="danger5" type="Area2D" parent="five"]
+script = ExtResource( 9 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="five/danger5"]
+position = Vector2( 362, -171 )
+polygon = PoolVector2Array( -143, 294, 468, 295, 464, -47, 59, -43, 57, -7, 344, -5, 337, 143, -91, 144, -93, 177, 335, 179, 336, 257, -143, 258 )
+
+[node name="six" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="six"]
+texture = ExtResource( 14 )
+
+[node name="homebutton" type="Area2D" parent="six"]
+script = ExtResource( 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="six/homebutton"]
+position = Vector2( -502, -235 )
+shape = SubResource( 1 )
+
+[node name="danger" type="Area2D" parent="six"]
+script = ExtResource( 18 )
+
+[node name="Danger" type="Sprite" parent="six/danger"]
+position = Vector2( 0, 0.25 )
+scale = Vector2( 1, 1.01351 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="six/danger"]
+position = Vector2( 0, 0.25 )
+shape = SubResource( 4 )
+
+[node name="danger2" type="Area2D" parent="six"]
+position = Vector2( 0, -100 )
+script = ExtResource( 18 )
+
+[node name="Danger" type="Sprite" parent="six/danger2"]
+position = Vector2( 0, 0.25 )
+scale = Vector2( 1, 1.01351 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="six/danger2"]
+position = Vector2( 0, 0.25 )
+shape = SubResource( 4 )
+
+[node name="danger3" type="Area2D" parent="six"]
+position = Vector2( 0, 100 )
+script = ExtResource( 18 )
+
+[node name="Danger" type="Sprite" parent="six/danger3"]
+position = Vector2( 0, 0.25 )
+scale = Vector2( 1, 1.01351 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="six/danger3"]
+position = Vector2( 0, 0.25 )
+shape = SubResource( 4 )
+
+[node name="danger4" type="Area2D" parent="six"]
+position = Vector2( -100, 0 )
+script = ExtResource( 18 )
+
+[node name="Danger" type="Sprite" parent="six/danger4"]
+position = Vector2( 0, 0.25 )
+scale = Vector2( 1, 1.01351 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="six/danger4"]
+position = Vector2( 0, 0.25 )
+shape = SubResource( 4 )
+
+[node name="danger5" type="Area2D" parent="six"]
+position = Vector2( 100, 0 )
+script = ExtResource( 18 )
+
+[node name="Danger" type="Sprite" parent="six/danger5"]
+position = Vector2( 0, 0.25 )
+scale = Vector2( 1, 1.01351 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="six/danger5"]
+position = Vector2( 0, 0.25 )
+shape = SubResource( 4 )
+
+[node name="home" type="Node2D" parent="."]
+visible = false
+
+[node name="Sprite" type="Sprite" parent="home"]
+texture = ExtResource( 15 )
+
+[connection signal="input_event" from="reset" to="reset" method="_on_reset_input_event"]
+[connection signal="restart" from="reset" to="." method="_on_reset_restart"]
+[connection signal="input_event" from="one/homebutton" to="one/homebutton" method="_on_homebutton_input_event"]
+[connection signal="update1" from="one/homebutton" to="." method="_on_homebutton_update1"]
+[connection signal="input_event" from="two/homebutton" to="two/homebutton" method="_on_homebutton_input_event"]
+[connection signal="update2" from="two/homebutton" to="." method="_on_homebutton_update2"]
+[connection signal="input_event" from="three/homebutton" to="three/homebutton" method="_on_homebutton_input_event"]
+[connection signal="update3" from="three/homebutton" to="." method="_on_homebutton_update3"]
+[connection signal="input_event" from="four/homebutton" to="four/homebutton" method="_on_homebutton_input_event"]
+[connection signal="update4" from="four/homebutton" to="." method="_on_homebutton_update4"]
+[connection signal="mouse_entered" from="four/danger" to="four/danger" method="_on_danger_mouse_entered"]
+[connection signal="restart" from="four/danger" to="." method="_on_danger_restart"]
+[connection signal="input_event" from="five/homebutton" to="five/homebutton" method="_on_homebutton_input_event"]
+[connection signal="update5" from="five/homebutton" to="." method="_on_homebutton_update5"]
+[connection signal="mouse_entered" from="five/danger" to="five/danger" method="_on_danger_mouse_entered"]
+[connection signal="restart" from="five/danger" to="." method="_on_danger_restart"]
+[connection signal="mouse_entered" from="five/danger2" to="five/danger2" method="_on_danger_mouse_entered"]
+[connection signal="restart" from="five/danger2" to="." method="_on_danger_restart"]
+[connection signal="mouse_entered" from="five/danger3" to="five/danger3" method="_on_danger_mouse_entered"]
+[connection signal="restart" from="five/danger3" to="." method="_on_danger_restart"]
+[connection signal="mouse_entered" from="five/danger4" to="five/danger4" method="_on_danger_mouse_entered"]
+[connection signal="restart" from="five/danger4" to="." method="_on_danger_restart"]
+[connection signal="mouse_entered" from="five/danger5" to="five/danger5" method="_on_danger_mouse_entered"]
+[connection signal="restart" from="five/danger5" to="." method="_on_danger_restart"]
+[connection signal="input_event" from="six/homebutton" to="six/homebutton" method="_on_homebutton_input_event"]
+[connection signal="update6" from="six/homebutton" to="." method="_on_homebutton_update6"]
+[connection signal="mouse_entered" from="six/danger" to="six/danger" method="_on_danger_mouse_entered"]
+[connection signal="restart" from="six/danger" to="." method="_on_danger_restart"]
+[connection signal="mouse_entered" from="six/danger2" to="six/danger2" method="_on_danger_mouse_entered"]
+[connection signal="restart" from="six/danger2" to="." method="_on_danger_restart"]
+[connection signal="mouse_entered" from="six/danger3" to="six/danger3" method="_on_danger_mouse_entered"]
+[connection signal="restart" from="six/danger3" to="." method="_on_danger_restart"]
+[connection signal="mouse_entered" from="six/danger4" to="six/danger4" method="_on_danger_mouse_entered"]
+[connection signal="restart" from="six/danger4" to="." method="_on_danger_restart"]
+[connection signal="mouse_entered" from="six/danger5" to="six/danger5" method="_on_danger_mouse_entered"]
+[connection signal="restart" from="six/danger5" to="." method="_on_danger_restart"]
